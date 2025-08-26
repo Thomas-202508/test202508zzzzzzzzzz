@@ -10,9 +10,9 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: 1049f85f-00c5-486d-8ca1-47d12d111fe3
-          tenant-id: 8476b9ee-0d95-42c1-bde6-bf029c6e25e6
-          subscription-id: 1eb9a600-bc40-406c-a0b7-ea5b7a777687
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Build and push container image to registry
         uses: azure/container-apps-deploy-action@v2
