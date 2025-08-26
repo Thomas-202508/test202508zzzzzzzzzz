@@ -1,3 +1,4 @@
+name: TestAction
 jobs:
   steps:
     - name: Checkout to the branch
