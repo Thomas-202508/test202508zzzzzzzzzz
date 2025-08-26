@@ -2,10 +2,10 @@ name: 'Azure Container Apps Build and Deploy'
 
 jobs:
 steps:
-  -	name: Checkout to the branch
+  - name: Checkout to the branch
     uses: actions/checkout@v2
 
-  -	name: Azure Login
+  - name: Azure Login
     uses: azure/login@v2
     with:
       client-id: 1049f85f-00c5-486d-8ca1-47d12d111fe3
