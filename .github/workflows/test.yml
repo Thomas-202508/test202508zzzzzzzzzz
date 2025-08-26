@@ -2,11 +2,11 @@ name: 'Azure Container Apps Build and Deploy'
 on: 
   pull_request:
     branches: [ main ]
+  permissions:
+    id-token: write
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
     steps:
       - name: Checkout to the branch
         uses: actions/checkout@v2
