@@ -1,9 +1,12 @@
 name: 'Azure Container Apps Build and Deploy'
-on: [ workflow_dispatch ]
-  branches: [ main ]
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   id-token: write
+  contents: read
 
 jobs:
   build:
