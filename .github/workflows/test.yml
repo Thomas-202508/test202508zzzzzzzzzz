@@ -1,23 +1,24 @@
 name: 'Azure Container Apps Build and Deploy'
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
 
-  steps:
-    - name: Checkout to the branch
-      uses: actions/checkout@v2
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: 1049f85f-00c5-486d-8ca1-47d12d111fe3
+          tenant-id: 8476b9ee-0d95-42c1-bde6-bf029c6e25e6
+          subscription-id: 1eb9a600-bc40-406c-a0b7-ea5b7a777687
 
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        client-id: 1049f85f-00c5-486d-8ca1-47d12d111fe3
-        tenant-id: 8476b9ee-0d95-42c1-bde6-bf029c6e25e6
-        subscription-id: 1eb9a600-bc40-406c-a0b7-ea5b7a777687
-
-    - name: Build and push container image to registry
-      uses: azure/container-apps-deploy-action@v2
-      with:
-        appSourcePath: ${{ github.workspace }}
-        acrName: nsPrdAcrOnline
-        containerAppName: tst-ns-prd-aca-online
-        resourceGroup: TST-ns-rg-Prd
-        imageToBuild:nsprdacronline-d5ghbgbcb3d9ateb.azurecr.io/testubuntu: ${{ github.run_id }}.${{ github.run_attempt }}
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}
+          acrName: nsPrdAcrOnline
+          containerAppName: tst-ns-prd-aca-online
+          resourceGroup: TST-ns-rg-Prd
+          imageToBuild:nsprdacronline-d5ghbgbcb3d9ateb.azurecr.io/testubuntu: ${{ github.run_id }}.${{ github.run_attempt }}
