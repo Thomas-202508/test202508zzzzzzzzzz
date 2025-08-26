@@ -11,6 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: production
     steps:
       - name: checkout to the branch
         uses: actions/checkout@v2
