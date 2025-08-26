@@ -1,5 +1,5 @@
 name: 'Azure Container Apps Build and Deploy'
-on:
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
