@@ -1,7 +1,5 @@
 name: 'Azure Container Apps Build and Deploy'
-on: 
-  pull_request: 
-    branches: [ main ]
+on: [ workflow_dispatch ]
 
 permissions:
   id-token: write
