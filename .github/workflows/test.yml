@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: windows-2025
+    runs-on: ubuntu-latest
     steps:
       - name: checkout to the branch
         uses: actions/checkout@v2
