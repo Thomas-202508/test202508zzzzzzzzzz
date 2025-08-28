@@ -27,7 +27,7 @@ jobs:
         uses: azure/container-apps-deploy-action@v2
         with:
           appSourcePath: ${{ github.workspace }}
-          acrName: nsPrdAcrOnline
+          acrName: nsprdacronline
           containerAppName: tst-ns-prd-aca-online
           resourceGroup: TST-ns-rg-Prd
           imageToBuild:nsprdacronline-d5ghbgbcb3d9ateb.azurecr.io/testubuntu: ${{ github.run_id }}.${{ github.run_attempt }}
