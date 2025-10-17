@@ -31,4 +31,4 @@ jobs:
           acrName: nststacronline
           containerAppName: tst-ns-prd-aca-online
           resourceGroup: TST-ns-rg-Prd
-          imageToBuild: nststacronline-hdgbbgcnhabmfagn.azurecr.io/testubuntu:${{ github.run_id }}.${{ github.run_attempt }}
+          imageToBuild: nststacronline.azurecr.io/testubuntu:${{ github.run_id }}.${{ github.run_attempt }}
